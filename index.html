@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bag Shop</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Welcome to the Bag Shop</h1>
+    </header>
+
+    <div class="container">
+        <h2 class="shop-title">Our Collection</h2>
+
+        <div class="product-list">
+            <!-- Product 1 -->
+            <div class="product-item">
+                <img src="https://via.placeholder.com/300" alt="Bag 1">
+                <h3>Leather Backpack</h3>
+                <p>$49.99</p>
+                <button onclick="addToCart('Leather Backpack', 49.99)">Add to Cart</button>
+            </div>
+
+            <!-- Product 2 -->
+            <div class="product-item">
+                <img src="https://via.placeholder.com/300" alt="Bag 2">
+                <h3>Classic Handbag</h3>
+                <p>$39.99</p>
+                <button onclick="addToCart('Classic Handbag', 39.99)">Add to Cart</button>
+            </div>
+
+            <!-- Product 3 -->
+            <div class="product-item">
+                <img src="https://via.placeholder.com/300" alt="Bag 3">
+                <h3>Travel Duffel Bag</h3>
+                <p>$59.99</p>
+                <button onclick="addToCart('Travel Duffel Bag', 59.99)">Add to Cart</button>
+            </div>
+
+            <!-- Product 4 -->
+            <div class="product-item">
+                <img src="https://via.placeholder.com/300" alt="Bag 4">
+                <h3>Stylish Tote Bag</h3>
+                <p>$29.99</p>
+                <button onclick="addToCart('Stylish Tote Bag', 29.99)">Add to Cart</button>
+            </div>
+        </div>
+
+        <div class="cart" id="cart">
+            <h2>Your Cart</h2>
+            <ul id="cart-items"></ul>
+            <p><strong>Total: $<span id="cart-total">0.00</span></strong></p>
+        </div>
+    </div>
+
+    <footer>
+        &copy; 2024 Bag Shop. All Rights Reserved.
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
