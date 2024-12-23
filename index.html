@@ -1,64 +1,68 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bag Shop</title>
-    <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Car Racing Game - A thrilling adventure on the race track.">
+  <title>Car Racing Game</title>
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <header>
-        <h1>Welcome to the Bag Shop</h1>
-    </header>
+  <!-- Welcome Screen -->
+  <div id="welcomeScreen" class="screen">
+    <h1>Welcome to the Car Racing Game!</h1>
+    <p>Get ready for an exciting adventure.</p>
+    <button id="startGameButton" class="btn">Start Game</button>
+  </div>
 
-    <div class="container">
-        <h2 class="shop-title">Our Collection</h2>
+  <!-- Game Header -->
+  <header id="gameHeader" class="screen hidden">
+    <h1>Car Racing Game</h1>
+  </header>
 
-        <div class="product-list">
-            <!-- Product 1 -->
-            <div class="product-item">
-                <img src="https://via.placeholder.com/300" alt="Bag 1">
-                <h3>Leather Backpack</h3>
-                <p>$49.99</p>
-                <button onclick="addToCart('Leather Backpack', 49.99)">Add to Cart</button>
-            </div>
+  <!-- Preloader -->
+  <div id="preloader" class="screen hidden">
+    <p>Loading...</p>
+  </div>
 
-            <!-- Product 2 -->
-            <div class="product-item">
-                <img src="https://via.placeholder.com/300" alt="Bag 2">
-                <h3>Classic Handbag</h3>
-                <p>$39.99</p>
-                <button onclick="addToCart('Classic Handbag', 39.99)">Add to Cart</button>
-            </div>
-
-            <!-- Product 3 -->
-            <div class="product-item">
-                <img src="https://via.placeholder.com/300" alt="Bag 3">
-                <h3>Travel Duffel Bag</h3>
-                <p>$59.99</p>
-                <button onclick="addToCart('Travel Duffel Bag', 59.99)">Add to Cart</button>
-            </div>
-
-            <!-- Product 4 -->
-            <div class="product-item">
-                <img src="https://via.placeholder.com/300" alt="Bag 4">
-                <h3>Stylish Tote Bag</h3>
-                <p>$29.99</p>
-                <button onclick="addToCart('Stylish Tote Bag', 29.99)">Add to Cart</button>
-            </div>
-        </div>
-
-        <div class="cart" id="cart">
-            <h2>Your Cart</h2>
-            <ul id="cart-items"></ul>
-            <p><strong>Total: $<span id="cart-total">0.00</span></strong></p>
-        </div>
+  <!-- Game Container -->
+  <div id="gameContainer" class="screen hidden">
+    <div id="gameInfo">
+      <span id="score">Score: 0</span>
+      <span id="lives">Lives: 3</span>
+      <button id="muteButton" class="btn">Mute</button>
     </div>
+    <canvas id="gameCanvas" width="400" height="600" aria-label="Game Area"></canvas>
+    <div id="gameOver" class="hidden">
+      <h2>Game Over</h2>
+      <p>Your Score: <span id="finalScore">0</span></p>
+      <button id="restartBtn" class="btn">Restart</button>
+    </div>
+  </div>
 
-    <footer>
-        &copy; 2024 Bag Shop. All Rights Reserved.
-    </footer>
+  <!-- Game Controls -->
+  <div id="gameControls" class="screen hidden">
+    <button id="pauseButton" class="btn">Pause</button>
+    <button id="leaderboardButton" class="btn">Leaderboard</button>
+  </div>
 
-    <script src="script.js"></script>
+  <!-- Leaderboard -->
+  <div id="leaderboard" class="screen hidden">
+    <h2>Leaderboard</h2>
+    <ul id="leaderboardList">
+      <li>Player1 - 1000</li>
+      <li>Player2 - 900</li>
+      <li>Player3 - 800</li>
+    </ul>
+    <button id="closeLeaderboard" class="btn">Close</button>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <p>Created by Zakir Aziz. &copy; 2024</p>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="app.js" defer></script>
 </body>
 </html>
