@@ -1,88 +1,119 @@
-let cart = JSON.parse(localStorage.getItem('cart')) || [];
-let total = parseFloat(localStorage.getItem('total')) || 0;
+// New Features
+let powerUps = [];
+let shieldActive = false;
+let shieldDuration = 5000; // 5 seconds
+let shieldTimer = 0;
+let highScore = 0;
 
-// Update the cart on page load
-updateCart();
+// Power-Up Image
+const shieldImage = new Image();
+shieldImage.src = "shield.png"; // Replace with your shield power-up image path
 
-function addToCart(item, price) {
-    const existingItem = cart.find(cartItem => cartItem.item === item);
-    if (existingItem) {
-        existingItem.quantity += 1;
-        existingItem.price += price;
-    } else {
-        cart.push({ item, price, quantity: 1 });
-    }
-    total += price;
-    saveCart();
-    updateCart();
+// Generate power-ups
+function generatePowerUps() {
+  if (Math.random() < 0.01) {
+    let x = Math.random() * (canvas.width - 30);
+    let y = -50;
+    powerUps.push({ x, y, width: 30, height: 30, type: "shield" });
+  }
 }
 
-function removeFromCart(item) {
-    const itemIndex = cart.findIndex(cartItem => cartItem.item === item);
-    if (itemIndex > -1) {
-        total -= cart[itemIndex].price / cart[itemIndex].quantity;
-        cart[itemIndex].quantity -= 1;
+// Move power-ups
+function movePowerUps() {
+  powerUps.forEach((powerUp, index) => {
+    powerUp.y += 2;
+    if (powerUp.y > canvas.height) {
+      powerUps.splice(index, 1); // Remove off-screen power-ups
+    }
 
-        if (cart[itemIndex].quantity === 0) {
-            cart.splice(itemIndex, 1);
+    // Check collision with player car
+    const playerRect = { x: playerCar.x, y: playerCar.y, width: playerCar.width, height: playerCar.height };
+    const powerUpRect = { x: powerUp.x, y: powerUp.y, width: powerUp.width, height: powerUp.height };
+    if (isCollision(playerRect, powerUpRect)) {
+      if (powerUp.type === "shield") {
+        shieldActive = true;
+        shieldTimer = Date.now();
+      }
+      powerUps.splice(index, 1); // Remove collected power-up
+    }
+  });
+}
+
+// Draw power-ups
+function drawPowerUps() {
+  powerUps.forEach((powerUp) => {
+    ctx.drawImage(shieldImage, powerUp.x, powerUp.y, powerUp.width, powerUp.height);
+  });
+}
+
+// Update shield state
+function updateShield() {
+  if (shieldActive && Date.now() - shieldTimer > shieldDuration) {
+    shieldActive = false;
+  }
+
+  if (shieldActive) {
+    ctx.strokeStyle = "blue";
+    ctx.lineWidth = 3;
+    ctx.strokeRect(playerCar.x - 5, playerCar.y - 5, playerCar.width + 10, playerCar.height + 10);
+  }
+}
+
+// Update high score
+function updateHighScore() {
+  if (score > highScore) {
+    highScore = score;
+  }
+  document.getElementById("highScore").textContent = `High Score: ${highScore}`;
+}
+
+// Add elements for score and high score in HTML
+// <div id="highScore"></div>
+
+// Update the game loop
+function gameLoop() {
+  if (isGameOver || isPaused) return;
+
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+  drawBackground();
+  drawPlayerCar();
+  drawEnemyCars();
+  drawPowerUps();
+  movePlayerCar();
+  generateEnemyCars();
+  moveEnemyCars();
+  generatePowerUps();
+  movePowerUps();
+  detectCollisions();
+  updateShield();
+  updateHighScore();
+
+  document.getElementById("score").textContent = `Score: ${score}`;
+  document.getElementById("lives").textContent = `Lives: ${lives}`;
+
+  gameInterval = requestAnimationFrame(gameLoop);
+}
+
+// Update collision logic to include shield
+function detectCollisions() {
+  const playerRect = { x: playerCar.x, y: playerCar.y, width: playerCar.width, height: playerCar.height };
+  enemyCars.forEach((car, index) => {
+    const enemyRect = { x: car.x, y: car.y, width: car.width, height: car.height };
+    if (isCollision(playerRect, enemyRect)) {
+      if (shieldActive) {
+        enemyCars.splice(index, 1); // Shield protects the car
+      } else {
+        crashSound.play(); // Play collision sound
+        lives--;
+        enemyCars.splice(index, 1); // Remove collided car
+        if (lives === 0) {
+          gameOver();
         }
+      }
     }
-    saveCart();
-    updateCart();
+  });
 }
 
-function updateCart() {
-    const cartItems = document.getElementById('cart-items');
-    const cartTotal = document.getElementById('cart-total');
-    const emptyMessage = 'Your cart is empty.';
-
-    cartItems.innerHTML = '';
-    if (cart.length === 0) {
-        cartItems.textContent = emptyMessage;
-    } else {
-        cart.forEach(({ item, price, quantity }) => {
-            const li = document.createElement('li');
-            li.innerHTML = `
-                ${item} - $${(price / quantity).toFixed(2)} x ${quantity} 
-                <button class="remove-btn" onclick="removeFromCart('${item}')">Remove</button>
-            `;
-            cartItems.appendChild(li);
-        });
-    }
-
-    cartTotal.textContent = total.toFixed(2);
-
-    // Animate cart update
-    cartItems.style.animation = 'fadeIn 0.5s';
-}
-
-function saveCart() {
-    localStorage.setItem('cart', JSON.stringify(cart));
-    localStorage.setItem('total', total.toFixed(2));
-}
-
-// CSS for button styling and animations
-const style = document.createElement('style');
-style.textContent = `
-    .remove-btn {
-        background-color: #ff4d4d;
-        color: white;
-        border: none;
-        padding: 5px 10px;
-        margin-left: 10px;
-        cursor: pointer;
-        border-radius: 5px;
-        font-size: 0.9rem;
-        transition: background-color 0.3s;
-    }
-
-    .remove-btn:hover {
-        background-color: #ff1a1a;
-    }
-
-    @keyframes fadeIn {
-        from { opacity: 0; }
-        to { opacity: 1; }
-    }
-`;
-document.head.appendChild(style);
+// Initialize the high score display
+document.getElementById("highScore").textContent = `High Score: ${highScore}`;
