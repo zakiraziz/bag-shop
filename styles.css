@@ -1,233 +1,204 @@
-/* General Styles */
+/* General body styling */
 body {
-    font-family: 'Arial', sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #f5f5f5;
-    color: #333;
+  font-family: 'Roboto', Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(120deg, #1e1e1e, #2a2a2a);
+  background-size: 300% 300%;
+  animation: gradientShift 10s infinite;
+  color: #f4f4f4;
+  text-align: center;
+  overflow-x: hidden;
 }
 
-/* Header Styles */
-header {
-    background-color: #333;
-    color: white;
-    padding: 20px 0;
-    text-align: center;
+@keyframes gradientShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
 }
 
-header h1 {
-    margin: 0;
-    font-size: 2.5rem;
+/* Game container styling */
+#gameContainer {
+  border: 4px solid #444;
+  width: 400px;
+  height: 600px;
+  position: relative;
+  margin: 50px auto;
+  background: linear-gradient(180deg, #e8e8e8, #d3d3d3);
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.6);
+  animation: popIn 0.8s ease-out;
 }
 
-.nav-menu {
-    display: flex;
-    justify-content: center;
-    margin: 10px 0 0;
-    list-style: none;
-    padding: 0;
+@keyframes popIn {
+  0% {
+    transform: scale(0.8);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
 }
 
-.nav-menu li {
-    margin: 0 15px;
+/* Animated road background */
+#background {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: url('road-background.jpg') repeat-y center;
+  background-size: cover;
+  animation: scrollBackground 3s linear infinite;
 }
 
-.nav-menu a {
-    text-decoration: none;
-    color: white;
-    font-size: 1.1rem;
+@keyframes scrollBackground {
+  0% { background-position-y: 0; }
+  100% { background-position-y: 100%; }
 }
 
-.nav-menu a:hover {
-    text-decoration: underline;
+/* Overlay displays */
+#score, #lives {
+  position: absolute;
+  font-size: 20px;
+  font-weight: bold;
+  font-family: Arial, sans-serif;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.6);
 }
 
-/* Hero Section */
-.hero-section {
-    background: linear-gradient(to right, #ff7e5f, #feb47b);
-    color: white;
-    text-align: center;
-    padding: 50px 20px;
+#score {
+  top: 10px;
+  left: 20px;
+  color: #222;
 }
 
-.hero-text h2 {
-    font-size: 2.5rem;
-    margin-bottom: 10px;
+#lives {
+  top: 10px;
+  right: 20px;
+  color: #222;
 }
 
-.hero-text p {
-    font-size: 1.2rem;
-    margin-bottom: 20px;
+/* Instructions section */
+#instructions {
+  position: absolute;
+  bottom: 20px;
+  width: 90%;
+  text-align: center;
+  font-size: 14px;
+  color: #555;
+  font-family: Arial, sans-serif;
 }
 
-.cta-button {
-    background-color: #333;
-    color: white;
-    padding: 10px 20px;
-    text-decoration: none;
-    font-size: 1rem;
-    border-radius: 5px;
+/* Buttons and selectors */
+button, select {
+  background-color: #333;
+  color: #fff;
+  border: none;
+  padding: 12px 20px;
+  margin: 10px;
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: transform 0.3s ease, background-color 0.3s ease;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.4);
 }
 
-.cta-button:hover {
-    background-color: #555;
+button:hover, select:hover {
+  background-color: #555;
+  transform: scale(1.1);
 }
 
-/* Collection Section */
-.container {
-    padding: 20px;
-    max-width: 1200px;
-    margin: auto;
+button:active {
+  transform: scale(0.95);
 }
 
-.shop-title {
-    text-align: center;
-    margin-bottom: 30px;
-    font-size: 2rem;
+/* Checkbox and labels */
+input[type="checkbox"] {
+  transform: scale(1.2);
+  margin: 0 5px;
 }
 
-.product-list {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
-    justify-content: center;
+label {
+  font-size: 14px;
+  color: #fff;
 }
 
-.product-item {
-    background: white;
-    border: 1px solid #ddd;
-    border-radius: 10px;
-    padding: 20px;
-    text-align: center;
-    width: 280px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease;
+/* Game Over screen */
+#gameOver {
+  display: none;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: rgba(0, 0, 0, 0.85);
+  padding: 30px;
+  text-align: center;
+  color: #fff;
+  border-radius: 15px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.7);
+  font-size: 18px;
+  animation: fadeIn 0.5s ease-in-out;
 }
 
-.product-item:hover {
-    transform: translateY(-10px);
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translate(-50%, -40%);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(-50%, -50%);
+  }
 }
 
-.product-item img {
-    max-width: 100%;
-    height: auto;
-    border-radius: 10px;
-    margin-bottom: 15px;
+/* Leaderboard styling */
+#leaderboard {
+  margin-top: 20px;
+  font-size: 18px;
+  text-align: center;
+  color: #ddd;
 }
 
-.product-item h3 {
-    margin: 15px 0 10px;
-    font-size: 1.2rem;
-    color: #333;
+#leaderboardList li {
+  background: rgba(255, 255, 255, 0.1);
+  padding: 10px;
+  margin: 5px 0;
+  border-radius: 5px;
+  transition: transform 0.3s ease, background-color 0.3s ease;
 }
 
-.product-item p {
-    color: #777;
-    font-size: 1rem;
+#leaderboardList li:hover {
+  color: #fff;
+  background: rgba(255, 255, 255, 0.2);
+  transform: scale(1.05);
 }
 
-.product-item button {
-    background-color: #333;
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    cursor: pointer;
-    border-radius: 5px;
-    font-size: 1rem;
-}
-
-.product-item button:hover {
-    background-color: #555;
-}
-
-/* Cart Styles */
-.cart {
-    margin-top: 40px;
-    background-color: white;
-    padding: 20px;
-    border-radius: 10px;
-    border: 1px solid #ddd;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-}
-
-.cart h2 {
-    margin-top: 0;
-}
-
-.cart ul {
-    list-style: none;
-    padding: 0;
-}
-
-.cart ul li {
-    margin-bottom: 10px;
-}
-
-/* About Section */
-#about {
-    background: #333;
-    color: white;
-    padding: 40px 20px;
-    text-align: center;
-}
-
-#about h2 {
-    font-size: 2rem;
-}
-
-#about p {
-    font-size: 1.1rem;
-    margin-top: 10px;
-}
-
-/* Contact Section */
-#contact {
-    background: #f9f9f9;
-    padding: 40px 20px;
-    text-align: center;
-}
-
-#contact h2 {
-    font-size: 2rem;
-}
-
-#contact form {
-    max-width: 600px;
-    margin: auto;
-}
-
-#contact label {
-    display: block;
-    margin: 10px 0 5px;
-}
-
-#contact input,
-#contact textarea,
-#contact button {
-    width: 100%;
-    padding: 10px;
-    margin-bottom: 20px;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    font-size: 1rem;
-}
-
-#contact button {
-    background-color: #333;
-    color: white;
-    border: none;
-    cursor: pointer;
-}
-
-#contact button:hover {
-    background-color: #555;
-}
-
-/* Footer */
+/* Footer styling */
 footer {
-    background-color: #333;
-    color: white;
-    text-align: center;
-    padding: 10px 0;
-    margin-top: 20px;
+  text-align: center;
+  padding: 10px 0;
+  background: #1e1e1e;
+  color: #bbb;
+  font-size: 12px;
+}
+
+/* Responsive Design */
+@media (max-width: 480px) {
+  #gameContainer {
+    width: 90%;
+    height: 500px;
+  }
+
+  #instructions {
+    font-size: 12px;
+  }
+
+  button, select {
+    font-size: 14px;
+    padding: 8px 12px;
+  }
+
+  #score, #lives {
+    font-size: 16px;
+  }
 }
