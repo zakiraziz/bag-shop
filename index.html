@@ -3,18 +3,18 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Car Racing Game - A thrilling adventure on the race track.">
-  <title>Car Racing Game</title>
+  <meta name="description" content="Welcome to the Bag Shop - Find the perfect bag for every occasion.">
+  <title>Bag Shop - Home</title>
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-<<<<<<< HEAD
     <!-- Header -->
     <header>
         <h1>Welcome to the Bag Shop</h1>
         <ul class="nav-menu">
-            <li><a href="#shop">Shop</a></li>
-            <li><a href="#about">About</a></li>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="product.html">Product Page</a></li>
             <li><a href="#contact">Contact</a></li>
         </ul>
     </header>
@@ -31,173 +31,45 @@
     <!-- Collection Section -->
     <div class="container" id="shop">
         <h2 class="shop-title">Our Collection</h2>
-=======
-  <!-- Welcome Screen -->
-  <div id="welcomeScreen" class="screen">
-    <h1>Welcome to the Car Racing Game!</h1>
-    <p>Get ready for an exciting adventure.</p>
-    <button id="startGameButton" class="btn">Start Game</button>
-    <p><a href="#instructions" class="btn">View Instructions</a></p>
-  </div>
 
-  <!-- Instructions -->
-  <div id="instructions" class="screen hidden">
-    <h2>How to Play</h2>
-    <ul>
-      <li>Use the arrow keys to steer your car.</li>
-      <li>Avoid obstacles and collect power-ups.</li>
-      <li>Earn points by racing as long as possible without crashing.</li>
-    </ul>
-    <button id="backToWelcome" class="btn">Back</button>
-  </div>
->>>>>>> f668fb013be2e743fa5bdc45f8a9f2fa10f594f7
-
-  <!-- Game Header -->
-  <header id="gameHeader" class="screen hidden">
-    <h1>Car Racing Game</h1>
-  </header>
-
-  <!-- Preloader -->
-  <div id="preloader" class="screen hidden">
-    <p>Loading...</p>
-  </div>
-
-<<<<<<< HEAD
-            <!-- Product 3 -->
-            <div class="product-item">
-                <img src="https://via.placeholder.com/300" alt="Bag 3">
-                <h3>Travel Duffel Bag</h3>
-                <p>$59.99</p>
-                <button onclick="addToCart('Travel Duffel Bag', 59.99)">Add to Cart</button>
-            </div>
-
-            <!-- Product 4 -->
-            <div class="product-item">
-                <img src="https://via.placeholder.com/300" alt="Bag 4">
-                <h3>Stylish Tote Bag</h3>
-                <p>$29.99</p>
-                <button onclick="addToCart('Stylish Tote Bag', 29.99)">Add to Cart</button>
-            </div>
+        <!-- Product 1 -->
+        <div class="product-item">
+            <img src="https://via.placeholder.com/300" alt="Bag 1">
+            <h3>Casual Backpack</h3>
+            <p>$39.99</p>
+            <button onclick="addToCart('Casual Backpack', 39.99)">Add to Cart</button>
         </div>
-=======
-  <!-- Game Container -->
-  <div id="gameContainer" class="screen hidden">
-    <div id="gameInfo">
-      <span id="score">Score: 0</span>
-      <span id="lives">Lives: 3</span>
-      <button id="muteButton" class="btn" aria-label="Mute/Unmute Audio">Mute</button>
->>>>>>> f668fb013be2e743fa5bdc45f8a9f2fa10f594f7
-    </div>
-    <canvas id="gameCanvas" width="400" height="600" aria-label="Game Area"></canvas>
-    <div id="gameOver" class="hidden">
-      <h2>Game Over</h2>
-      <p>Your Score: <span id="finalScore">0</span></p>
-      <button id="restartBtn" class="btn">Restart</button>
-      <button id="backToWelcomeFromGameOver" class="btn">Back to Welcome</button>
-    </div>
-  </div>
 
-<<<<<<< HEAD
+        <!-- Product 2 -->
+        <div class="product-item">
+            <img src="https://via.placeholder.com/300" alt="Bag 2">
+            <h3>Elegant Shoulder Bag</h3>
+            <p>$49.99</p>
+            <button onclick="addToCart('Elegant Shoulder Bag', 49.99)">Add to Cart</button>
+        </div>
+
+        <!-- Product 3 -->
+        <div class="product-item">
+            <img src="https://via.placeholder.com/300" alt="Bag 3">
+            <h3>Travel Duffel Bag</h3>
+            <p>$59.99</p>
+            <button onclick="addToCart('Travel Duffel Bag', 59.99)">Add to Cart</button>
+        </div>
+
+        <!-- Product 4 -->
+        <div class="product-item">
+            <img src="https://via.placeholder.com/300" alt="Bag 4">
+            <h3>Stylish Tote Bag</h3>
+            <p>$29.99</p>
+            <button onclick="addToCart('Stylish Tote Bag', 29.99)">Add to Cart</button>
+        </div>
+    </div>
+
     <!-- Cart Section -->
     <div class="cart" id="cart">
         <h2>Your Cart</h2>
         <ul id="cart-items"></ul>
         <p><strong>Total: $<span id="cart-total">0.00</span></strong></p>
     </div>
-
-    <!-- About Section -->
-    <div id="about">
-        <h2>About Us</h2>
-        <p>Welcome to Bag Shop, your one-stop destination for stylish and functional bags. Whether you're looking for a casual backpack or a sophisticated tote, we have something for everyone!</p>
-    </div>
-
-    <!-- Contact Section -->
-    <div id="contact">
-        <h2>Contact Us</h2>
-        <form>
-            <label for="name">Name</label>
-            <input type="text" id="name" name="name" placeholder="Your Name" required>
-
-            <label for="email">Email</label>
-            <input type="email" id="email" name="email" placeholder="Your Email" required>
-
-            <label for="message">Message</label>
-            <textarea id="message" name="message" placeholder="Your Message" rows="5" required></textarea>
-
-            <button type="submit">Send Message</button>
-        </form>
-    </div>
-
-    <!-- Footer -->
-    <footer>
-        <p>&copy; 2024 Bag Shop. All Rights Reserved.</p>
-    </footer>
-
-    <script>
-        function addToCart(item, price) {
-            const cartItems = document.getElementById('cart-items');
-            const cartTotal = document.getElementById('cart-total');
-            const li = document.createElement('li');
-            li.textContent = `${item} - $${price.toFixed(2)}`;
-            cartItems.appendChild(li);
-
-            const total = parseFloat(cartTotal.textContent) + price;
-            cartTotal.textContent = total.toFixed(2);
-        }
-    </script>
-=======
-  <!-- Game Controls -->
-  <div id="gameControls" class="screen hidden">
-    <button id="pauseButton" class="btn" aria-label="Pause Game">Pause</button>
-    <button id="leaderboardButton" class="btn">Leaderboard</button>
-    <button id="settingsButton" class="btn">Settings</button>
-  </div>
-
-  <!-- Leaderboard -->
-  <div id="leaderboard" class="screen hidden">
-    <h2>Leaderboard</h2>
-    <ul id="leaderboardList">
-      <li>Player1 - 1000</li>
-      <li>Player2 - 900</li>
-      <li>Player3 - 800</li>
-    </ul>
-    <button id="closeLeaderboard" class="btn">Close</button>
-  </div>
-
-  <!-- Settings -->
-  <div id="settings" class="screen hidden">
-    <h2>Settings</h2>
-    <label for="volumeControl">Volume:</label>
-    <input type="range" id="volumeControl" min="0" max="100" value="50">
-    <br>
-    <label for="difficultySelect">Difficulty:</label>
-    <select id="difficultySelect">
-      <option value="easy">Easy</option>
-      <option value="medium">Medium</option>
-      <option value="hard">Hard</option>
-    </select>
-    <button id="closeSettings" class="btn">Close</button>
-  </div>
-
-  <!-- Footer -->
-  <footer>
-    <p>Created by Zakir Aziz. &copy; 2024</p>
-    <p>
-      <a href="#credits" class="btn">Credits</a>
-    </p>
-  </footer>
-
-  <!-- Credits -->
-  <div id="credits" class="screen hidden">
-    <h2>Credits</h2>
-    <p>Developer: Zakir Aziz</p>
-    <p>Graphics: Open Assets</p>
-    <p>Music: Free Music Archive</p>
-    <button id="backToWelcomeFromCredits" class="btn">Back to Welcome</button>
-  </div>
-
-  <!-- Scripts -->
-  <script src="app.js" defer></script>
->>>>>>> f668fb013be2e743fa5bdc45f8a9f2fa10f594f7
 </body>
 </html>
