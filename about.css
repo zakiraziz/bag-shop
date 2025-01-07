@@ -1,4 +1,35 @@
+<div class="images-container">
+    <div class="image-item">
+        <img src="image1.jpg" alt="Image 1">
+    </div>
+    <div class="image-item">
+        <img src="image2.jpg" alt="Image 2">
+    </div>
+    <div class="image-item">
+        <img src="image3.jpg" alt="Image 3">
+    </div>
+    <div class="image-item">
+        <img src="image4.jpg" alt="Image 4">
+    </div>
+    <div class="image-item">
+        <img src="image5.jpg" alt="Image 5">
+    </div>
+    <div class="image-item">
+        <img src="image6.jpg" alt="Image 6">
+    </div>
+</div>
+Key Features:
+flex-wrap ensures that items wrap to the next row if needed.
+calc(33.33% - 10px) calculates the width to fit three images per row while accounting for spacing.
+Hover Effects add interactivity with scaling and shadow changes.
+Responsive Breakpoints ensure it looks good on all devices.
 
+
+
+
+
+You said:
+do the css un this 
 /* General body styling */
 body {
     font-family: 'Arial', sans-serif;
@@ -414,6 +445,7 @@ nav {
     background-color: #f9f9f9;
     padding: 40px 20px;
     text-align: center;
+    display: line block;
 }
 
 #team h2 {
@@ -422,10 +454,10 @@ nav {
 }
 
 .team-members {
-    display: flex;
-    justify-content: center;
-    gap: 30px;
-    flex-wrap: wrap;
+    display: flex; /* Makes the team members align horizontally */
+    justify-content: center; /* Centers the items horizontally */
+    gap: 30px; /* Adds space between team members */
+    flex-wrap: wrap; /* Allows wrapping if there are too many items */
 }
 
 .team-member {
@@ -435,6 +467,9 @@ nav {
     border-radius: 10px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     text-align: center;
+    display: flex;
+    flex-direction: column; /* Ensures the image, name, and description are stacked vertically */
+    align-items: center; /* Centers the content */
 }
 
 .team-member img {
@@ -515,4 +550,3 @@ footer p {
     margin: 0;
     font-size: 1rem;
 }
-
