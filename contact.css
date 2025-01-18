@@ -39,120 +39,96 @@
 
 /* Hero Section */
 .hero {
-    text-align: center;
     background-color: #f0f0f0;
+    text-align: center;
     padding: 50px 20px;
 }
 
-.hero h1 {
+.hero-text h1 {
     font-size: 2.5rem;
     margin-bottom: 10px;
 }
 
-.hero p {
+.hero-text p {
     font-size: 1.2rem;
-    color: #555;
+    margin-bottom: 20px;
 }
 
-/* Featured Product Section */
-.featured-product {
-    margin: 20px auto;
+/* Contact Section */
+.contact-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 20px;
     max-width: 1000px;
+    margin: 20px auto;
     padding: 20px;
     background-color: #fff;
     border-radius: 8px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
-.featured-product h2 {
-    text-align: center;
-    margin-bottom: 20px;
+.contact-details, .contact-form {
+    flex: 1;
+    min-width: 300px;
 }
 
-.product-highlight {
-    display: flex;
-    gap: 20px;
-    align-items: center;
-}
-
-.product-highlight img {
-    width: 50%;
-    border-radius: 8px;
-}
-
-.product-info h3 {
-    font-size: 1.5rem;
+.contact-details p {
     margin-bottom: 10px;
+    line-height: 1.6;
 }
 
-.product-info p {
-    margin-bottom: 10px;
-    color: #555;
+.contact-details a {
+    color: #ff9900;
+    text-decoration: none;
 }
 
-.cta-button {
-    display: inline-block;
+.contact-details a:hover {
+    text-decoration: underline;
+}
+
+.contact-form label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.contact-form input, 
+.contact-form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+.contact-form button {
     padding: 10px 20px;
     background-color: #ff9900;
     color: #fff;
-    text-decoration: none;
+    border: none;
     border-radius: 5px;
-    transition: background-color 0.3s;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
 }
 
-.cta-button:hover {
+.contact-form button:hover {
     background-color: #cc7a00;
 }
 
-/* Product Listing Section */
-.product-list {
+/* Map Section */
+.map {
     margin: 20px auto;
     max-width: 1000px;
-}
-
-.product-list h2 {
     text-align: center;
-    margin-bottom: 20px;
-}
-
-.products {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
-    justify-content: center;
-}
-
-.product-card {
-    background-color: #fff;
-    border-radius: 8px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    padding: 20px;
-    text-align: center;
-    width: 300px;
-}
-
-.product-card img {
-    width: 100%;
-    border-radius: 8px;
-    margin-bottom: 15px;
-}
-
-.product-card h3 {
-    font-size: 1.2rem;
-    margin-bottom: 10px;
-}
-
-.product-card p {
-    margin-bottom: 10px;
-    color: #555;
 }
 
 /* Footer */
 .footer {
     background-color: #333;
     color: #fff;
-    text-align: center;
     padding: 10px 20px;
+    text-align: center;
 }
 
 .footer a {
