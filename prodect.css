@@ -11,6 +11,10 @@
     background-color: #333;
     color: #fff;
     padding: 10px 20px;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
 }
 
 .navbar {
@@ -30,11 +34,12 @@
     color: #fff;
     padding: 5px 10px;
     border-radius: 3px;
-    transition: background-color 0.3s;
+    transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 .nav-links a:hover, .nav-links .active {
     background-color: #ff9900;
+    color: #fff;
 }
 
 /* Hero Section */
@@ -47,11 +52,26 @@
 .hero h1 {
     font-size: 2.5rem;
     margin-bottom: 10px;
+    color: #333;
 }
 
 .hero p {
     font-size: 1.2rem;
     color: #555;
+}
+
+.hero .cta-button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #ff9900;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.hero .cta-button:hover {
+    background-color: #cc7a00;
 }
 
 /* Featured Product Section */
@@ -67,6 +87,7 @@
 .featured-product h2 {
     text-align: center;
     margin-bottom: 20px;
+    color: #333;
 }
 
 .product-highlight {
@@ -78,11 +99,17 @@
 .product-highlight img {
     width: 50%;
     border-radius: 8px;
+    transition: transform 0.3s ease;
+}
+
+.product-highlight img:hover {
+    transform: scale(1.05);
 }
 
 .product-info h3 {
     font-size: 1.5rem;
     margin-bottom: 10px;
+    color: #333;
 }
 
 .product-info p {
@@ -90,17 +117,17 @@
     color: #555;
 }
 
-.cta-button {
+.product-info .cta-button {
     display: inline-block;
     padding: 10px 20px;
     background-color: #ff9900;
     color: #fff;
     text-decoration: none;
     border-radius: 5px;
-    transition: background-color 0.3s;
+    transition: background-color 0.3s ease;
 }
 
-.cta-button:hover {
+.product-info .cta-button:hover {
     background-color: #cc7a00;
 }
 
@@ -113,6 +140,7 @@
 .product-list h2 {
     text-align: center;
     margin-bottom: 20px;
+    color: #333;
 }
 
 .products {
@@ -129,6 +157,12 @@
     padding: 20px;
     text-align: center;
     width: 300px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.product-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
 }
 
 .product-card img {
@@ -140,11 +174,27 @@
 .product-card h3 {
     font-size: 1.2rem;
     margin-bottom: 10px;
+    color: #333;
 }
 
 .product-card p {
     margin-bottom: 10px;
     color: #555;
+}
+
+.product-card .cta-button {
+    margin-top: 10px;
+    padding: 10px 20px;
+    background-color: #4caf50;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.product-card .cta-button:hover {
+    background-color: #43a047;
 }
 
 /* Footer */
@@ -153,13 +203,16 @@
     color: #fff;
     text-align: center;
     padding: 10px 20px;
+    margin-top: 20px;
 }
 
 .footer a {
     color: #ff9900;
     text-decoration: none;
+    transition: color 0.3s ease;
 }
 
 .footer a:hover {
+    color: #cc7a00;
     text-decoration: underline;
 }
