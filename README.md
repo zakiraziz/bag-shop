@@ -18,9 +18,9 @@
 
 # Products
 
-A showcase of stylish and versatile bags.
+1 . A showcase of stylish and versatile bags.
 
-1 . Easy navigation to browse the collection.
+2 . Easy navigation to browse the collection.
 
 # 🎨 Design Highlights
 
