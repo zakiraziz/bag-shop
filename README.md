@@ -1,26 +1,26 @@
 # 👜 My Bag Shop
 
-Welcome to My Bag Shop! This project showcases a simple yet elegant website for a bag shop, featuring three main sections:
+1 . Welcome to My Bag Shop! This project showcases a simple yet elegant website for a bag shop, featuring three main sections:
 
 # 🌟 Features
 
 # Home
 
-A welcoming page that highlights the uniqueness of the shop.
+1 . A welcoming page that highlights the uniqueness of the shop.
 
-Beautifully designed to grab attention with a clean and modern look.
+2 . Beautifully designed to grab attention with a clean and modern look.
 
 # About
 
-Learn about the story behind the shop.
+1 . Learn about the story behind the shop.
 
-Includes the mission and values that set this shop apart.
+2 . Includes the mission and values that set this shop apart.
 
 # Products
 
 A showcase of stylish and versatile bags.
 
-Easy navigation to browse the collection.
+1 . Easy navigation to browse the collection.
 
 # 🎨 Design Highlights
 
