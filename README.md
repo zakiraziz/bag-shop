@@ -16,7 +16,7 @@ Learn about the story behind the shop.
 
 Includes the mission and values that set this shop apart.
 
-#Products
+# Products
 
 A showcase of stylish and versatile bags.
 
@@ -24,43 +24,43 @@ Easy navigation to browse the collection.
 
 # 🎨 Design Highlights
 
-Color Theme: A vibrant and elegant red-inspired palette.
+1 . Color Theme: A vibrant and elegant red-inspired palette.
 
-Responsive Design: Ensures seamless browsing on all devices.
+2 . Responsive Design: Ensures seamless browsing on all devices.
 
-User-Friendly Interface: Intuitive layout for an enjoyable shopping experience.
+3 . User-Friendly Interface: Intuitive layout for an enjoyable shopping experience.
 
 # 🚀 Technologies Used
 
-HTML: Structuring the website.
+1 . HTML: Structuring the website.
 
-CSS: Styling for a visually stunning design.
+1. CSS: Styling for a visually stunning design.
 
-JavaScript: Adding interactivity to enhance user engagement.
+3 . JavaScript: Adding interactivity to enhance user engagement.
 
 # 📸 Preview
 
-Add screenshots or a live demo link here to give a glimpse of the beautiful design.
+1 .Add screenshots or a live demo link here to give a glimpse of the beautiful design.
 
 # 🛠 How to Use
 
-Clone the repository:
+1 . Clone the repository:
 
-git clone https://github.com/zakiraziz/my-bag-shop.git
+2 . git clone https://github.com/zakiraziz/my-bag-shop.git
 
-Open the index.html file in your browser.
+3 . Open the index.html file in your browser.
 
 # 🤝 Contributing
 
-Contributions, issues, and feature requests are welcome! Feel free to check the issues page.
+1 . Contributions, issues, and feature requests are welcome! Feel free to check the issues page.
 
 # 📜 License
 
-This project is licensed under the MIT License. See the LICENSE file for details.
+1 . This project is licensed under the MIT License. See the LICENSE file for details.
 
 # 📧 Contact
 
-If you have any questions or suggestions, feel free to contact me:
+1 . If you have any questions or suggestions, feel free to contact me:
 
 GitHub: zakiraziz
 
